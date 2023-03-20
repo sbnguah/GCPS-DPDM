@@ -1,0 +1,189 @@
+---
+title: "Questionnaire & Database Design"
+subtitle: "DPDM-Workshop II"
+author: "Dr. Samuel Blay Nguah FWACP FGCP"
+institute: "KNUST - SMD"
+date:  "March 13, 2023"
+output:
+  xaringan::moon_reader:
+    css: [default, css/GCPSdark1.css, css/GCPS-fonts.css]
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: true
+      ratio: "16:9"
+    includes:
+      after_body: CSS/gcps_logo.html
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(knitr)
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+
+xaringanExtra::use_tile_view()
+xaringanExtra::use_animate_all(style = "fade")
+xaringanExtra::use_scribble()
+```
+class: title-slide, left, bottom
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+---
+# Workshop outline...
+
+----
+- Recap of previous workshop
+- Formation of groups
+- Types of variables
+- Designing a questionnaire
+- Codebook
+- Database design – EpiData
+- Data entry for workshop questionnaire
+- Visualising entered data 
+
+---
+class: center middle 
+# Recap of workshop I & other matters…
+
+---
+class: center middle 
+# Formation of groups of 3
+
+---
+class: center middle
+# Do we all have <u>.red[EpiData] </u> and <u>.red[Stata]</u> installed and working?
+
+---
+class: center middle
+# VARIABLE TYPES
+
+---
+# Variable Types
+----
+Each variable and the resulting data will be one of two types:
+- **Qualitative** (*categorical*) or 
+- **Quantitative** (*numerical*)
+
+.center[
+<img src="Images\variable_types.jpg" style="width: 70%" />
+]
+---
+# Qualitative data
+----
+.pull-left[
+- Nominal data
+    - The categories are not ordered but simply have names. 
+    - Examples include blood group (A, B, AB, and O).
+
+- Binary (dichotomous) data  
+    - There are only 2 possible categories for the variable. 
+    - E.g Sex (male and female)
+]
+.pull-right[
+- Ordinal data
+    - the categories are ordered in some way. 
+    - Examples include disease staging systems - Advanced, Moderate, Mild, none
+]
+
+---
+Quantitative (*Numeric*)
+----
+.pull-left[
+- Continuous 
+    - Takes on any precision. 
+    - Has no limitation to the values. 
+    - E.g : Age of a person
+]
+
+.pull-right[
+- Discrete  
+    - Takes on certain specific (usually) whole numbers. 
+    - Often a representation of a count of events. 
+    - E.g. Number of cars
+]
+---
+# Other data types
+----
+.pull-left[
+- Percentages
+    - Usually  stored as a quantitative but actually a fraction
+    - 24% of 200 is not the same as 24% of 300.
+    - E.g. Patient’s FEV1 increase by 24% following treatment with a new drug.
+]
+
+.pull-right[
+- Ratios or quotients
+    - Ratio of two variables
+    - E.g incidence ratio, BMI
+
+- Scores
+    - Arbitrary values 
+    - Not very meaningful
+    - E.g: Pain score
+]
+
+---
+# Group Work
+----
+- Be in your groups
+- Give five examples each of the following variables:
+    - Numeric 
+        - Discrete numeric
+        - Continuous numeric
+    - Categorical data
+        - Nominal
+        - Ordinal 
+    - Binary
+    - Date and/or time
+```{r}
+library(countdown)
+countdown(font_size = "100px",
+  minutes = 10, 
+  seconds = 0,
+  color_border              = "red",
+  color_text                = "red",
+)
+```
+
+---
+class: middle center
+.activity[
+Presentation of Group work
+]
+
+```{r}
+countdown(minutes=10, seconds=0)
+```
+---
+
+# Dependent & Independent variables
+----
+- **Independent** (predictor) variable 
+    - Potentially influences, affects or predicts another variable
+    - E.g: How age influences income make age the independent variable
+
+- **Dependent** (predicted) variable 
+    - Potentially predicted, influenced and affected by another variable
+    - E.g: How age influences income make income the dependent variable
+
+---
+class: middle center
+.activity[
+Can we have volunteers  tell us about their .red[TOPIC], .red[INDEPENDENT] and .red[DEPENDENT] variables to be collected?
+]
+
+```{r}
+countdown(minutes=10, seconds=0)
+```
+
